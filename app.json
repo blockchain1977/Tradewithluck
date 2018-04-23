@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "sdkVersion": "26.0.0",
+    "name": "Trade With Luck",
+    "slug": "trade-with-luck",
+    "icon": "src/images/tradewithluck.png",
+    "privacy": "public"
+  },
+  "name": "TradeWithLuck",
+  "displayName": "Trade With Luck"
+}
