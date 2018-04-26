@@ -1,45 +1,43 @@
-import React from "react";
+import { Stack, Scene, Tabs } from 'react-native-router-flux';
+import { Icon } from 'native-base';
 
-import { Scene, Tabs, Stack } from "react-native-router-flux";
-import { Icon } from "native-base";
+import React from 'react';
+import AuctionListContainer from '../containers/AuctionListContainer';
+import AuctionList from './components/AuctionList';
+import AccountInfo from './components/AccountInfo';
 
-import AuctionListContainer from "../containers/AuctionListContainer";
-import AuctionList from "./components/AuctionList";
-import AccountInfo from "./components/AccountInfo";
-
-export default class routers extends React.Component {
-  render() {
-    return (
-      <Stack>
-        <Scene hideNavBar>
-          <Tabs key="tabbar" swipeEnabled type="replace" showLabel={true}>
-            <Stack
-              key="autionlist"
-              title="AuctionList"
-              icon={() => <Icon name="logo-bitcoin" />}
-            >
-              <Scene
-                key="autionlist"
-                component={AuctionListContainer}
-                Layout={AuctionList}
-              />
-            </Stack>
-
-            <Stack
-              key="accountinfo"
-              title="AccountInfo"
-              icon={() => <Icon name="logo-bitcoin" />}
-            >
-              <Scene key="accountinfo" component={AccountInfo} />
-            </Stack>
-          </Tabs>
-        </Scene>
-        <Scene
+const routers = (
+  <Stack>
+    <Scene hideNavBar>
+      <Tabs key="tabbar" swipeEnabled type="replace" showLabel>
+        <Stack
           key="autionlist"
-          component={AuctionListContainer}
-          Layout={AuctionList}
-        />
-      </Stack>
-    );
-  }
-}
+          title="AuctionList"
+          icon={() => <Icon name="logo-bitcoin" />}
+        >
+          <Scene
+            key="autionlist"
+            component={AuctionListContainer}
+            Layout={AuctionList}
+          />
+        </Stack>
+
+        <Stack
+          key="accountinfo"
+          title="AccountInfo"
+          icon={() => <Icon name="logo-bitcoin" />}
+        >
+          <Scene key="accountinfo" component={AccountInfo} />
+        </Stack>
+      </Tabs>
+    </Scene>
+    <Scene
+      key="autionlist"
+      title="AuctionList"
+      component={AuctionListContainer}
+      Layout={AuctionList}
+    />
+  </Stack>
+);
+
+export default routers;

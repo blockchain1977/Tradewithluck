@@ -1,19 +1,25 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import { getAuctionList } from "../actions/AuctionList";
+import getAuctions from '../actions/AuctionList';
 
 class AuctionList extends Component {
+  static propTypes = {
+    Layout: PropTypes.func.isRequired,
+    auctions: PropTypes.shape({
+      auctions: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    }).isRequired,
+    getAuctions: PropTypes.func.isRequired,
+  }
+
   componentDidMount = () => this.fetchAuctions();
 
   /**
    * Fetch Data from API, saving to Redux
    */
-  fetchAuctions = () => {
-    return this.props
-      .getAuctionList();
-  };
+  fetchAuctions = () => this.props
+    .getAuctions();
 
   render = () => {
     const { Layout, auctions } = this.props;
@@ -21,19 +27,18 @@ class AuctionList extends Component {
     return (
       <Layout
         auctions={auctions.auctions}
+        reFetch={() => this.fetchRecipes()}
       />
     );
   };
 }
 
 const mapStateToProps = state => ({
-  auctions: state.auctions || {}
+  auctions: state.auctions || {},
 });
 
 const mapDispatchToProps = {
-  getAuctionList
+  getAuctions,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  AuctionList
-);
+export default connect(mapStateToProps, mapDispatchToProps)(AuctionList);
