@@ -1,19 +1,14 @@
-import Store from "../stores";
-
-export const initialState = Store;
-
-export default auctionListReducer = (state = initialState, action = {} => {
+export default function auctionListReducer(
+  state = { autions: [{ kye: "Test" }, { key: "Try" }] },
+  action = {}
+) {
   const { type, payload } = action;
   switch (type) {
-    case 'ADD_AUCTION':
+    case "AUCTIONS_UPDATE":
       return Object.assign({}, state, {
-        chatLog: payload
-      });
-    case 'CHANGE_AUCTION':
-      return Object.assign({}, state, {
-        statusMessage: payload
+        auctions: payload
       });
     default:
       return state;
   }
-});
+}

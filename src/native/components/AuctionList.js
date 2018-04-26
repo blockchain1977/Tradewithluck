@@ -15,7 +15,7 @@ export default class AuctionList extends React.Component {
           </Button>
           <FlatList
             numColumns={1}
-            data={[{ key: 'Wawawa' }, { key: 'Gagaga' }]}
+            data={ this.props.auctions }
             renderItem={({ item }) => (
               <Card>
                 <CardItem cardBody>
