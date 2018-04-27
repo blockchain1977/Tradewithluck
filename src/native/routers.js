@@ -4,6 +4,7 @@ import { Icon } from 'native-base';
 import React from 'react';
 import AuctionListContainer from '../containers/AuctionListContainer';
 import AuctionList from './components/AuctionList';
+import Auction from './components/Auction';
 import AccountInfo from './components/AccountInfo';
 
 const routers = (
@@ -32,10 +33,10 @@ const routers = (
       </Tabs>
     </Scene>
     <Scene
-      key="autionlist"
-      title="AuctionList"
+      key="aution"
+      title="Auction"
       component={AuctionListContainer}
-      Layout={AuctionList}
+      Layout={Auction}
     />
   </Stack>
 );

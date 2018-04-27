@@ -24,7 +24,7 @@ class AuctionList extends Component {
     return (
       <Layout
         auctions={auctions.auctions}
-        reFetch={() => this.fetchRecipes()}
+        reFetch={() => this.getAuctions()}
       />
     );
   };
