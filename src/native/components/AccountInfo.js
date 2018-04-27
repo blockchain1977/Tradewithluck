@@ -4,9 +4,9 @@ import { Container, Content, Text } from 'native-base';
 const AccountInfo = () => (
   <Container>
     <Content padder>
-      <Text>Lalala. </Text>
-      <Text>Hahaha. </Text>
-      <Text>Wawawa. </Text>
+      <Text>Username </Text>
+      <Text>CurrentInAuction </Text>
+      <Text>Address </Text>
     </Content>
   </Container>
 );

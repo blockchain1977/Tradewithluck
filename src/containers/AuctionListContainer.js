@@ -15,9 +15,6 @@ class AuctionList extends Component {
 
   componentDidMount = () => this.fetchAuctions();
 
-  /**
-   * Fetch Data from API, saving to Redux
-   */
   fetchAuctions = () => this.props
     .getAuctions();
 
