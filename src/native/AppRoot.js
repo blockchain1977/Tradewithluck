@@ -9,16 +9,18 @@ import { Provider } from 'react-redux';
 import { StatusBar, Platform } from 'react-native';
 import { Root } from 'native-base';
 
+import PropTypes from 'prop-types';
+
 import routers from './routers';
 
 if (Platform.OS === 'android') StatusBar.setHidden(true);
 
 export default class AppRoot extends Component {
+  static propTypes = { store: PropTypes.shape().isRequired };
+
   constructor() {
     super();
-    this.state = {
-      isReady: false
-    };
+    this.state = { isReady: false };
   }
 
   async componentWillMount() {
