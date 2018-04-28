@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import auctionListReducer from './reducers/auctionListReducer';
+import reducers from './reducers';
 
-const reducer = combineReducers({ auctions: auctionListReducer });
+const reducer = combineReducers(reducers);
 
 export default reducer;

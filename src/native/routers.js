@@ -11,33 +11,16 @@ const routers = (
   <Stack>
     <Scene hideNavBar>
       <Tabs key="tabbar" swipeEnabled type="replace" showLabel>
-        <Stack
-          key="autionlist"
-          title="AuctionList"
-          icon={() => <Icon name="logo-bitcoin" />}
-        >
-          <Scene
-            key="autionlist"
-            component={AuctionListContainer}
-            Layout={AuctionList}
-          />
+        <Stack key="autionlist" title="AuctionList" icon={() => <Icon name="logo-bitcoin" />}>
+          <Scene key="autionlist" component={AuctionListContainer} Layout={AuctionList} />
         </Stack>
 
-        <Stack
-          key="accountinfo"
-          title="AccountInfo"
-          icon={() => <Icon name="logo-bitcoin" />}
-        >
+        <Stack key="accountinfo" title="AccountInfo" icon={() => <Icon name="logo-bitcoin" />}>
           <Scene key="accountinfo" component={AccountInfo} />
         </Stack>
       </Tabs>
     </Scene>
-    <Scene
-      key="aution"
-      title="Auction"
-      component={AuctionListContainer}
-      Layout={Auction}
-    />
+    <Scene key="aution" title="Auction" component={AuctionListContainer} Layout={Auction} />
   </Stack>
 );
 

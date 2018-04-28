@@ -4,9 +4,7 @@ import { Container, Content, Text, Card, CardItem, View } from 'native-base';
 
 import PropTypes from 'prop-types';
 
-const AuctionList = ({
-  auctions,
-}) => (
+const AuctionList = ({ auctions }) => (
   <Container>
     <Content>
       <FlatList
@@ -28,9 +26,8 @@ const AuctionList = ({
   </Container>
 );
 
-
 AuctionList.propTypes = {
-  auctions: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  auctions: PropTypes.arrayOf(PropTypes.shape()).isRequired
 };
 
 export default AuctionList;

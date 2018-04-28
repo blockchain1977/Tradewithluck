@@ -1,13 +1,25 @@
 import React from 'react';
 import { FlatList, TouchableOpacity, Image } from 'react-native';
-import { Right, Icon, Button, Left, Body, Thumbnail, Container, Content, Text, Card, CardItem, View } from 'native-base';
+import {
+  Fab,
+  Right,
+  Icon,
+  Button,
+  Left,
+  Body,
+  Thumbnail,
+  Container,
+  Content,
+  Text,
+  Card,
+  CardItem,
+  View
+} from 'native-base';
 // import { Actions } from 'react-native-router-flux';
 
 import PropTypes from 'prop-types';
 
-const AuctionList = ({
-  auctions,
-}) => (
+const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
   <Container>
     <Content>
       <FlatList
@@ -23,7 +35,11 @@ const AuctionList = ({
                 </Body>
               </Left>
               <TouchableOpacity style={{ flex: 1 }}>
-                <Image source={{ uri: item.image }} aspectRatio={100} style={{ height: 100, width: null, flex: 1 }} />
+                <Image
+                  source={{ uri: item.image }}
+                  aspectRatio={100}
+                  style={{ height: 100, width: null, flex: 1 }}
+                />
                 <View style={{ flex: 1, height: 30 }} />
                 <Text style={{ fontWeight: '800' }}>{item.key}</Text>
               </TouchableOpacity>
@@ -48,13 +64,35 @@ const AuctionList = ({
           </Card>
         )}
       />
+      <View style={{ flex: 1 }}>
+        <Fab
+          active={fabstatus}
+          direction="up"
+          containerStyle={{}}
+          style={{ backgroundColor: '#5067FF' }}
+          position="bottomRight"
+          onPress={() => toggleFAB()}
+        >
+          <Icon name="share" />
+          <Button style={{ backgroundColor: '#34A34F' }}>
+            <Icon name="logo-whatsapp" />
+          </Button>
+          <Button style={{ backgroundColor: '#3B5998' }}>
+            <Icon name="logo-facebook" />
+          </Button>
+          <Button disabled style={{ backgroundColor: '#DD5144' }}>
+            <Icon name="mail" />
+          </Button>
+        </Fab>
+      </View>
     </Content>
   </Container>
 );
 
-
 AuctionList.propTypes = {
   auctions: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  fabstatus: PropTypes.bool.isRequired,
+  toggleFAB: PropTypes.func.isRequired
 };
 
 export default AuctionList;
