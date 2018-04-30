@@ -1,12 +1,6 @@
 export default function auctionListReducer(
   state = {
-    auctions: [
-      {
-        key: 'Test',
-        image:
-          'http://images.clipartpanda.com/auctioneer-clipart-New-Auction-Gavel-Clip-Art-Logo.jpg'
-      }
-    ],
+    auctions: [],
     fabstatus: false
   },
   action
@@ -16,7 +10,14 @@ export default function auctionListReducer(
     case 'AUCTIONS_UPDATE': {
       let auctions = [];
       if (payload && typeof payload === 'object') {
-        auctions = payload.map(item => ({ key: item.key, image: item.image }));
+        auctions = payload.map(item => ({
+          key: item.key,
+          name: item.name,
+          image: item.image,
+          age: item.age,
+          breed: item.breed,
+          location: item.location
+        }));
       }
       return {
         ...state,

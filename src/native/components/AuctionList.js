@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, TouchableOpacity, Image } from 'react-native';
+import { FlatList } from 'react-native';
 import {
   Fab,
   Right,
@@ -31,18 +31,12 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
               <Left>
                 <Thumbnail source={{ uri: item.image }} />
                 <Body>
-                  <Text>{item.key}</Text>
+                  <Text>Name: {item.name}</Text>
+                  <Text>Age: {item.age}</Text>
+                  <Text>Breed: {item.breed}</Text>
+                  <Text>Location: {item.location}</Text>
                 </Body>
               </Left>
-              <TouchableOpacity style={{ flex: 1 }}>
-                <Image
-                  source={{ uri: item.image }}
-                  aspectRatio={100}
-                  style={{ height: 100, width: null, flex: 1 }}
-                />
-                <View style={{ flex: 1, height: 30 }} />
-                <Text style={{ fontWeight: '800' }}>{item.key}</Text>
-              </TouchableOpacity>
             </CardItem>
             <CardItem>
               <Left>
@@ -58,11 +52,15 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
                 </Button>
               </Body>
               <Right>
-                <Text>11h ago</Text>
+                <Button>
+                  <Icon active name="logo-bitcoin" />
+                  <Text>adopt</Text>
+                </Button>
               </Right>
             </CardItem>
           </Card>
         )}
+        keyExtractor={item => item.key}
       />
       <View style={{ flex: 1 }}>
         <Fab

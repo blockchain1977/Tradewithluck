@@ -1,21 +1,21 @@
+import petData from '../assets/pets.json';
+
 export function getAuctions() {
+  const url = 'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:3000/';
+
   return dispatch =>
     new Promise(resolve =>
       resolve(
         dispatch({
           type: 'AUCTIONS_UPDATE',
-          payload: [
-            {
-              key: 'Good deal',
-              image:
-                'http://images.clipartpanda.com/auctioneer-clipart-New-Auction-Gavel-Clip-Art-Logo.jpg'
-            },
-            {
-              key: 'Good price',
-              image:
-                'http://images.clipartpanda.com/auctioneer-clipart-New-Auction-Gavel-Clip-Art-Logo.jpg'
-            }
-          ]
+          payload: petData.map(pet => ({
+            key: pet.id,
+            name: pet.name,
+            image: url + pet.picture,
+            age: pet.age,
+            breed: pet.breed,
+            location: pet.location
+          }))
         })
       )
     ).catch(e => console.log(e));
