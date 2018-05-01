@@ -6,6 +6,7 @@ export default class Adoption {
   init(web3Provider) {
     this.contract = TruffleContract(contractData);
     this.contract.Adoption.setProvider(web3Provider);
+    return this;
   }
 
   // Need use below method to retrive the adopt status and set state of Adopt button
@@ -36,7 +37,7 @@ export default class Adoption {
   //   }
 
   async handleAdopt(pet) {
-    const petId = pet.id;
+    const petId = parseInt(pet.id, 10);
 
     let adoptionInstance;
 

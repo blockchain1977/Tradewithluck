@@ -53,7 +53,7 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
               </Body>
               <Right>
                 <Button>
-                  <Icon active name="logo-bitcoin" />
+                  <Icon disabled={item.adoptstatus} name="logo-bitcoin" />
                   <Text>adopt</Text>
                 </Button>
               </Right>
