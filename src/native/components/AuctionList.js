@@ -62,28 +62,28 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
         )}
         keyExtractor={item => item.key}
       />
-      <View style={{ flex: 1 }}>
-        <Fab
-          active={fabstatus}
-          direction="up"
-          containerStyle={{}}
-          style={{ backgroundColor: '#5067FF' }}
-          position="bottomRight"
-          onPress={() => toggleFAB()}
-        >
-          <Icon name="share" />
-          <Button style={{ backgroundColor: '#34A34F' }}>
-            <Icon name="logo-whatsapp" />
-          </Button>
-          <Button style={{ backgroundColor: '#3B5998' }}>
-            <Icon name="logo-facebook" />
-          </Button>
-          <Button disabled style={{ backgroundColor: '#DD5144' }}>
-            <Icon name="mail" />
-          </Button>
-        </Fab>
-      </View>
     </Content>
+    <View>
+      <Fab
+        active={fabstatus}
+        direction="up"
+        containerStyle={{}}
+        style={{ backgroundColor: '#5067FF' }}
+        position="bottomRight"
+        onPress={() => toggleFAB()}
+      >
+        <Icon name="share" />
+        <Button style={{ backgroundColor: '#34A34F' }}>
+          <Icon name="logo-whatsapp" />
+        </Button>
+        <Button style={{ backgroundColor: '#3B5998' }}>
+          <Icon name="logo-facebook" />
+        </Button>
+        <Button disabled style={{ backgroundColor: '#DD5144' }}>
+          <Icon name="mail" />
+        </Button>
+      </Fab>
+    </View>
   </Container>
 );
 
