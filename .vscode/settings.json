@@ -1,4 +1,6 @@
-{
-  "react-native.packager.port": 19001,
-  "editor.formatOnSave": true
+ {
+  "react-native.packager.port":19001, 
+  "editor.formatOnSave":false, 
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
 }

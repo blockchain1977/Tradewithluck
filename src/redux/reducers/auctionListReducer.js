@@ -16,7 +16,8 @@ export default function auctionListReducer(
           image: item.image,
           age: item.age,
           breed: item.breed,
-          location: item.location
+          location: item.location,
+          adopted: item.adopted
         }));
       }
       return {
