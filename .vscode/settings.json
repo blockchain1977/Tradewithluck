@@ -1,4 +1,4 @@
 {
-  "react-native.packager.port": 19001,
+  "react-native.packager.port": 8081,
   "editor.formatOnSave": true
 }

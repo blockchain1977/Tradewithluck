@@ -1,4 +1,5 @@
 import petData from '../assets/pets.json';
+import Adoption from '../blockchain/Adoption';
 
 export function getAuctions() {
   const url = 'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:3000/';
