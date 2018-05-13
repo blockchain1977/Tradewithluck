@@ -8,6 +8,7 @@
 //     'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:8545/'
 //   );
 // }
+
 global.Buffer = require('buffer').Buffer;
 global.process = require('process');
 
@@ -20,6 +21,14 @@ if (!global.atob) {
 if (!global.btoa) {
   global.btoa = require('base-64').encode;
 }
+
+const Web3 = require('web3');
+
+global.web3 = new Web3(
+  new Web3.providers.HttpProvider(
+    'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:8545/'
+  )
+);
 // if (typeof atob === 'undefined') {
 //   global.atob = function(b64Encoded) {
 //     return Buffer.from(b64Encoded, 'base64').toString('binary');

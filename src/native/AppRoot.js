@@ -10,15 +10,7 @@ import { Root } from 'native-base';
 
 import PropTypes from 'prop-types';
 
-import Web3 from 'web3';
-
 import routers from './routers';
-
-global.web3 = new Web3(
-  new Web3.providers.HttpProvider(
-    'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:8545/'
-  )
-);
 
 if (Platform.OS === 'android') StatusBar.setHidden(true);
 
