@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getAuctions, toggleFAB } from '../actions/AuctionList';
+import adoption from '../blockchain/Adoption';
 
 class AuctionList extends Component {
   static propTypes = {
@@ -19,6 +20,11 @@ class AuctionList extends Component {
     this.props.getAuctions();
   };
 
+  adoptPet = petId => {
+    adoption.handleAdopt(petId);
+    this.props.getAuctions();
+  };
+
   render = () => {
     const { Layout, auctions } = this.props;
 
@@ -28,6 +34,7 @@ class AuctionList extends Component {
         auctions={auctions.auctions}
         reFetch={() => this.props.getAuctions()}
         toggleFAB={this.props.toggleFAB}
+        adoptPet={this.adoptPet}
       />
     );
   };

@@ -19,7 +19,7 @@ import {
 
 import PropTypes from 'prop-types';
 
-const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
+const AuctionList = ({ auctions, fabstatus, toggleFAB, adoptPet }) => (
   <Container>
     <Content>
       <FlatList
@@ -52,9 +52,9 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
                 </Button>
               </Body>
               <Right>
-                <Button disabled={item.adopted}>
+                <Button disabled={item.adopted} onPress={() => adoptPet(parseInt(item.key, 10))}>
                   <Icon active name="logo-bitcoin" />
-                  <Text>adopt</Text>
+                  <Text>{item.adopted ? 'adopted' : 'adopt'}</Text>
                 </Button>
               </Right>
             </CardItem>
@@ -90,7 +90,8 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB }) => (
 AuctionList.propTypes = {
   auctions: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   fabstatus: PropTypes.bool.isRequired,
-  toggleFAB: PropTypes.func.isRequired
+  toggleFAB: PropTypes.func.isRequired,
+  adoptPet: PropTypes.func.isRequired
 };
 
 export default AuctionList;

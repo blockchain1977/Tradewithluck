@@ -1,11 +1,11 @@
 import petData from '../assets/pets.json';
-import Adoption from '../blockchain/Adoption';
+import adoption from '../blockchain/Adoption';
 
 export function getAuctions() {
   return dispatch => {
     const url = 'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:3000/';
 
-    new Adoption().checkallAdoptedStatus().then(status =>
+    adoption.checkallAdoptedStatus().then(status =>
       dispatch({
         type: 'AUCTIONS_UPDATE',
         payload: petData.map(pet => ({

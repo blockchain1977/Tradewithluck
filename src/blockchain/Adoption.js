@@ -1,13 +1,13 @@
-export default class Adoption {
+class Adoption {
   constructor() {
     // const contract = require('truffle-contract');
     this.contract = new global.web3.eth.Contract(
       [
-        ({
+        {
           constant: true,
-          inputs: [{ name: '', type: 'uint256' }],
-          name: 'adopters',
-          outputs: [{ name: '', type: 'address' }],
+          inputs: [],
+          name: 'getAdopters',
+          outputs: [{ name: '', type: 'address[16]' }],
           payable: false,
           stateMutability: 'view',
           type: 'function'
@@ -20,16 +20,7 @@ export default class Adoption {
           payable: false,
           stateMutability: 'nonpayable',
           type: 'function'
-        },
-        {
-          constant: true,
-          inputs: [],
-          name: 'getAdopters',
-          outputs: [{ name: '', type: 'address[16]' }],
-          payable: false,
-          stateMutability: 'view',
-          type: 'function'
-        })
+        }
       ],
       '0x06f7c7540412fdf41e0694c4d6bb7a17dd62b7a3',
       {
@@ -60,11 +51,7 @@ export default class Adoption {
     );
   }
 
-  handleAdopt(pet) {
-    const petId = parseInt(pet.id, 10);
-
-    // let adoptionInstance;
-
+  handleAdopt(petId) {
     // will set to actual account after wallet function implimented
     const account = '0x4aa7b8957c71880258d3b2a89e877e3ab8071ca7';
 
@@ -72,7 +59,10 @@ export default class Adoption {
       this.contract.methods
         .adopt(petId)
         .send({ from: account })
-        .then()
+        .then(result => result)
     );
   }
 }
+
+const adoption = new Adoption();
+export default adoption;
