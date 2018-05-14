@@ -1,4 +1,9 @@
-{
-  "react-native.packager.port": 8081,
-  "editor.formatOnSave": true
+ {
+  "react-native.packager.port":8081, 
+  // Set the default
+  "editor.formatOnSave":false, 
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave":true
+  }
 }

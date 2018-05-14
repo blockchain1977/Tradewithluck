@@ -22,9 +22,9 @@ class Adoption {
           type: 'function'
         }
       ],
-      '0x06f7c7540412fdf41e0694c4d6bb7a17dd62b7a3',
+      '0x8ffc5e04e738f4e5a7c4b122d02645dea11ea770',
       {
-        from: '0x4aa7b8957c71880258d3b2a89e877e3ab8071ca7', // default from address
+        from: '0xc6528cfd9e53ea608593223884f141ea1ed11689', // default from address
         gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
       }
     );
@@ -38,7 +38,7 @@ class Adoption {
         .call()
         .then(adopters => {
           const adoptionstatus = [];
-          for (let i = 0; i < adopters.length; i++) {
+          for (let i = 0; i < adopters.length; i += 1) {
             if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
               adoptionstatus.push(true);
             } else {
@@ -53,7 +53,7 @@ class Adoption {
 
   handleAdopt(petId) {
     // will set to actual account after wallet function implimented
-    const account = '0x4aa7b8957c71880258d3b2a89e877e3ab8071ca7';
+    const account = '0xc6528cfd9e53ea608593223884f141ea1ed11689';
 
     return Promise.resolve(
       this.contract.methods
