@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getAuctions, toggleFAB } from '../actions/AuctionList';
-import adoption from '../blockchain/Adoption';
+import { getAuctions, toggleFAB, bidAuctions } from '../actions/AuctionList';
 
 class AuctionList extends Component {
   static propTypes = {
@@ -13,15 +12,11 @@ class AuctionList extends Component {
       fabstatus: PropTypes.bool.isRequired
     }).isRequired,
     getAuctions: PropTypes.func.isRequired,
-    toggleFAB: PropTypes.func.isRequired
+    toggleFAB: PropTypes.func.isRequired,
+    bidAuctions: PropTypes.func.isRequired
   };
 
   componentDidMount = () => {
-    this.props.getAuctions();
-  };
-
-  adoptPet = petId => {
-    adoption.handleAdopt(petId);
     this.props.getAuctions();
   };
 
@@ -34,19 +29,21 @@ class AuctionList extends Component {
         auctions={auctions.auctions}
         reFetch={() => this.props.getAuctions()}
         toggleFAB={this.props.toggleFAB}
-        adoptPet={this.adoptPet}
+        adoptPet={this.props.bidAuctions}
       />
     );
   };
 }
 
 const mapStateToProps = state => ({
-  auctions: state.auctions || {}
+  auctions: state.auctions || {},
+  fabstatus: state.fabstatus
 });
 
 const mapDispatchToProps = {
   getAuctions,
-  toggleFAB
+  toggleFAB,
+  bidAuctions
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuctionList);

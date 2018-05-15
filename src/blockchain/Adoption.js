@@ -1,3 +1,8 @@
+import '../../global';
+
+const account = '0x9a9046fc6ee9659a596a390343bbf3967ad8abb5';
+const contractAddress = '0xa7bff1567cc1b7d211ccc348d7c4d9d3356e82bc';
+
 class Adoption {
   constructor() {
     // const contract = require('truffle-contract');
@@ -22,9 +27,9 @@ class Adoption {
           type: 'function'
         }
       ],
-      '0x8ffc5e04e738f4e5a7c4b122d02645dea11ea770',
+      contractAddress,
       {
-        from: '0xc6528cfd9e53ea608593223884f141ea1ed11689', // default from address
+        from: account, // default from address
         gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
       }
     );
@@ -53,13 +58,12 @@ class Adoption {
 
   handleAdopt(petId) {
     // will set to actual account after wallet function implimented
-    const account = '0xc6528cfd9e53ea608593223884f141ea1ed11689';
 
     return Promise.resolve(
       this.contract.methods
         .adopt(petId)
         .send({ from: account })
-        .then(result => result)
+        .then(() => petId)
     );
   }
 }

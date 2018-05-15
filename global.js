@@ -22,13 +22,7 @@ if (!global.btoa) {
   global.btoa = require('base-64').encode;
 }
 
-const Web3 = require('web3');
-
-global.web3 = new Web3(
-  new Web3.providers.HttpProvider(
-    'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:8545/'
-  )
-);
+global.web3 = require('./src/blockchain/Web3Provider').web3;
 // if (typeof atob === 'undefined') {
 //   global.atob = function(b64Encoded) {
 //     return Buffer.from(b64Encoded, 'base64').toString('binary');

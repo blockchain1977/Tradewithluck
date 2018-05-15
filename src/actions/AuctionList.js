@@ -1,10 +1,10 @@
 import petData from '../assets/pets.json';
 import adoption from '../blockchain/Adoption';
 
+const url = 'http://52.199.0.93:3000/';
+
 export function getAuctions() {
   return dispatch => {
-    const url = 'http://ec2-54-92-55-120.ap-northeast-1.compute.amazonaws.com:3000/';
-
     adoption.checkallAdoptedStatus().then(status =>
       dispatch({
         type: 'AUCTIONS_UPDATE',
@@ -17,6 +17,17 @@ export function getAuctions() {
           location: pet.location,
           adopted: status[parseInt(pet.id, 10)]
         }))
+      })
+    );
+  };
+}
+
+export function bidAuctions(index) {
+  return dispatch => {
+    adoption.handleAdopt(index).then(() =>
+      dispatch({
+        type: 'AUCTIONS_ITEM_BID',
+        payload: index
       })
     );
   };

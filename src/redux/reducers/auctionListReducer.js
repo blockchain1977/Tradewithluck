@@ -28,6 +28,11 @@ export default function auctionListReducer(
     case 'TOGGLE_FAB': {
       return { ...state, fabstatus: !state.fabstatus };
     }
+    case 'AUCTIONS_ITEM_BID': {
+      const auctions = state.auctions.slice();
+      auctions[payload].adopted = true;
+      return { ...state, auctions };
+    }
     default:
       return state;
   }
