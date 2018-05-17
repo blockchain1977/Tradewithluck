@@ -1,7 +1,7 @@
 import '../../global';
 
-const account = '0x9a9046fc6ee9659a596a390343bbf3967ad8abb5';
-const contractAddress = '0xa7bff1567cc1b7d211ccc348d7c4d9d3356e82bc';
+const account = '0xe65e645d0ce0c15992907e9995945d6dd454aa09';
+const contractAddress = '0x269af36b29ecaa1c18e6e37859e72a37cefae7ad';
 
 class Adoption {
   constructor() {

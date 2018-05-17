@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { getAuctions, toggleFAB, bidAuctions } from '../actions/AuctionList';
 
-class AuctionList extends Component {
+class AuctionListContainer extends Component {
   static propTypes = {
     Layout: PropTypes.func.isRequired,
     auctions: PropTypes.shape({
@@ -46,4 +46,4 @@ const mapDispatchToProps = {
   bidAuctions
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuctionList);
+export default connect(mapStateToProps, mapDispatchToProps)(AuctionListContainer);

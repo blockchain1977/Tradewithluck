@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing AuctionList renders as expected 1`] = `
+exports[`Testing AuctionList check rendered 1`] = `
 <Container
   style={
     Object {
@@ -11,6 +11,19 @@ exports[`Testing AuctionList renders as expected 1`] = `
 >
   <Styled(Content)>
     <FlatList
+      data={
+        Array [
+          Object {
+            "adopted": false,
+            "age": "5",
+            "breed": "Test breed",
+            "image": "http://52.199.0.93:3000/images/scottish-terrier.jpeg",
+            "key": 0,
+            "location": "Auckland",
+            "name": "Kyle",
+          },
+        ]
+      }
       disableVirtualization={false}
       horizontal={false}
       initialNumToRender={10}
@@ -26,6 +39,99 @@ exports[`Testing AuctionList renders as expected 1`] = `
   </Styled(Content)>
   <Styled(ViewNB)>
     <Styled(Fab)
+      active={false}
+      containerStyle={Object {}}
+      direction="up"
+      onPress={[Function]}
+      position="bottomRight"
+      style={
+        Object {
+          "backgroundColor": "#5067FF",
+        }
+      }
+    >
+      <Styled(Icon)
+        name="share"
+      />
+      <Styled(Button)
+        style={
+          Object {
+            "backgroundColor": "#34A34F",
+          }
+        }
+      >
+        <Styled(Icon)
+          name="logo-whatsapp"
+        />
+      </Styled(Button)>
+      <Styled(Button)
+        style={
+          Object {
+            "backgroundColor": "#3B5998",
+          }
+        }
+      >
+        <Styled(Icon)
+          name="logo-facebook"
+        />
+      </Styled(Button)>
+      <Styled(Button)
+        disabled={true}
+        style={
+          Object {
+            "backgroundColor": "#DD5144",
+          }
+        }
+      >
+        <Styled(Icon)
+          name="mail"
+        />
+      </Styled(Button)>
+    </Styled(Fab)>
+  </Styled(ViewNB)>
+</Container>
+`;
+
+exports[`Testing AuctionList check rendered 2 1`] = `
+<Container
+  style={
+    Object {
+      "flex": 1,
+      "height": 1334,
+    }
+  }
+>
+  <Styled(Content)>
+    <FlatList
+      data={
+        Array [
+          Object {
+            "adopted": false,
+            "age": "5",
+            "breed": "Test breed",
+            "image": "http://52.199.0.93:3000/images/scottish-terrier.jpeg",
+            "key": 0,
+            "location": "Auckland",
+            "name": "Kyle",
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      updateCellsBatchingPeriod={50}
+      windowSize={21}
+    />
+  </Styled(Content)>
+  <Styled(ViewNB)>
+    <Styled(Fab)
+      active={true}
       containerStyle={Object {}}
       direction="up"
       onPress={[Function]}

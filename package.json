@@ -27,6 +27,7 @@
     "jest-serializer-enzyme": "^1.0.0",
     "prettier": "^1.12.1",
     "react-addons-test-utils": "^15.6.2",
+    "react-test-render": "^1.1.1",
     "react-test-renderer": "16.3.0-alpha.1",
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
