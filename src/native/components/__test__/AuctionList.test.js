@@ -7,9 +7,11 @@ import AuctionList from '../AuctionList';
 
 configure({ adapter: new Adapter() });
 
-const setup = (state) => {
+const setup = state => {
   const actions = { toggleFAB: jest.fn(), adoptPet: jest.fn() };
-  const component = shallow(<AuctionList auctions={state.auctions} fabstatus={state.fabstatus} {...actions} />);
+  const component = shallow(
+    <AuctionList auctions={state.auctions} fabstatus={state.fabstatus} {...actions} />
+  );
 
   return {
     component,
@@ -22,7 +24,20 @@ describe('Testing AuctionList', () => {
   let initialState;
 
   beforeEach(() => {
-    initialState = { auctions: [{ key: 0, name: 'Kyle', image: 'http://52.199.0.93:3000/images/scottish-terrier.jpeg', age: '5', breed: 'Test breed', location: 'Auckland', adopted: false }], fabstatus: false };
+    initialState = {
+      auctions: [
+        {
+          key: 0,
+          name: 'Kyle',
+          image: 'http://52.199.0.93:3000/images/scottish-terrier.jpeg',
+          age: '5',
+          breed: 'Test breed',
+          location: 'Auckland',
+          adopted: false
+        }
+      ],
+      fabstatus: false
+    };
   });
 
   it('check rendered', () => {
@@ -31,7 +46,7 @@ describe('Testing AuctionList', () => {
   });
 
   it('check rendered 2', () => {
-    const { component } = setup({auctions: initialState.auctions, fabstatus: true});
+    const { component } = setup({ auctions: initialState.auctions, fabstatus: true });
     expect(component.dive()).toMatchSnapshot();
   });
 });

@@ -1,8 +1,9 @@
 {
     "extends": ["airbnb", "prettier"],
     "parser": "babel-eslint",
-    "ecmaFeatures": {
-        "classes": true
+    "env": {
+        "jest": true,
+        "node": true
     },
     "rules": {
         "react/jsx-filename-extension": [
