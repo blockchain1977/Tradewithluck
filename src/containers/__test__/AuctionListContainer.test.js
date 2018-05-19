@@ -2,15 +2,14 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import configureStore from 'redux-mock-store';
-import { Stack, Scene, Tabs } from 'react-native-router-flux';
-import { Icon, Root } from 'native-base';
+import { Stack, Router } from 'react-native-router-flux';
+import { Root } from 'native-base';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
 
 // imported as a connected component!
-import AuctionListContainer from '../AuctionListContainer';
-
-import AuctionList from '../../components/AuctionList';
+import routers from '../../native/routers';
 
 const middlewares = [thunk]; // you can mock any middlewares here if necessary
 const mockStore = configureStore(middlewares);
@@ -37,15 +36,9 @@ configure({ adapter: new Adapter() });
 const component = shallow(
   <Root>
     <Provider store={store}>
-      <Stack>
-        <Scene hideNavBar>
-          <Tabs key="tabbar" swipeEnabled type="replace" showLabel>
-            <Stack key="autionlist" title="AuctionList">
-              <Scene key="autionlist" component={AuctionListContainer} Layout={AuctionList} />
-            </Stack>
-          </Tabs>
-        </Scene>
-      </Stack>
+      <Router>
+        <Stack key="root">{routers}</Stack>
+      </Router>
     </Provider>
   </Root>
 );
@@ -53,5 +46,19 @@ const component = shallow(
 describe('Test AuctionListContainer', () => {
   it('check rendered', () => {
     expect(component.dive()).toMatchSnapshot();
+  });
+
+  it('renders correctly', () => {
+    const tree = renderer
+      .create(
+        <Root>
+          <Provider store={store}>
+            <Router>
+              <Stack key="root">{routers}</Stack>
+            </Router>
+          </Provider>
+        </Root>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
