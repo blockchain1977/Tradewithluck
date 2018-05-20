@@ -6,7 +6,7 @@ version: 2
 general:
   branches:
     only:
-      - circlesupport
+      - eject_bc
 jobs:
   build:
     docker:
