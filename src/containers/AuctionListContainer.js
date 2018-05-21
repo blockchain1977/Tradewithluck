@@ -36,8 +36,7 @@ class AuctionListContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  auctions: state.auctions || {},
-  fabstatus: state.fabstatus
+  auctions: state.auctions || {}
 });
 
 const mapDispatchToProps = {

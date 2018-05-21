@@ -15,40 +15,42 @@ const middlewares = [thunk]; // you can mock any middlewares here if necessary
 const mockStore = configureStore(middlewares);
 
 const initialState = {
-  auctions: [
-    {
-      key: 0,
-      name: 'Kyle',
-      image: 'http://52.199.0.93:3000/images/scottish-terrier.jpeg',
-      age: '5',
-      breed: 'Test breed',
-      location: 'Auckland',
-      adopted: false
-    }
-  ],
-  fabstatus: false
+  auctions: {
+    auctions: [
+      {
+        key: 0,
+        name: 'Kyle',
+        image: 'http://52.199.0.93:3000/images/scottish-terrier.jpeg',
+        age: '5',
+        breed: 'Test breed',
+        location: 'Auckland',
+        adopted: false
+      }
+    ],
+    fabstatus: false
+  }
 };
 
 const store = mockStore(initialState);
 
 configure({ adapter: new Adapter() });
 
-const component = shallow(
-  <Root>
-    <Provider store={store}>
-      <Router>
-        <Stack key="root">{routers}</Stack>
-      </Router>
-    </Provider>
-  </Root>
-);
-
 describe('Test AuctionListContainer', () => {
-  it('check rendered', () => {
+  it('check shallow rendered', () => {
+    const component = shallow(
+      <Root>
+        <Provider store={store}>
+          <Router>
+            <Stack key="root">{routers}</Stack>
+          </Router>
+        </Provider>
+      </Root>
+  );
+
     expect(component.dive()).toMatchSnapshot();
   });
 
-  it('renders correctly', () => {
+  it('check detail rendered. Failed always for to Key difference', () => {
     const tree = renderer
       .create(
         <Root>
