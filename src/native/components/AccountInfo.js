@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Content, Text } from 'native-base';
+import Bla from '../../blockchain/eth.android'
 
 const AccountInfo = () => (
   <Container>
@@ -7,6 +8,7 @@ const AccountInfo = () => (
       <Text>Username </Text>
       <Text>CurrentInAuction </Text>
       <Text>Address </Text>
+      <Bla />
     </Content>
   </Container>
 );
