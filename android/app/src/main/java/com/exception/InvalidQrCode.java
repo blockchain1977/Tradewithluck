@@ -15,17 +15,14 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.crypto.hdshim;
+package com.exception;
 
+public class InvalidQrCode extends Exception {
+    public InvalidQrCode(Throwable cause) {
+        super(cause);
+    }
 
-import org.bitcoinj.core.NetworkParameters;
-import org.bitcoinj.wallet.DeterministicSeed;
-import org.bitcoinj.wallet.KeyChainGroup;
-
-public class EthereumKeyChainGroup extends KeyChainGroup {
-
-    public EthereumKeyChainGroup(final NetworkParameters params, final DeterministicSeed seed) {
-        super(params);
-        addAndActivateHDChain(new EthereumDeterministicKeyChain(seed));
+    public InvalidQrCode() {
+        super(new Throwable("Invalid QR code"));
     }
 }

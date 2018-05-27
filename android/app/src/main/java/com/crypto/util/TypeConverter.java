@@ -15,14 +15,14 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.util;
+package com.crypto.util;
 
 
 import android.support.annotation.Nullable;
 
-import com.toshi.extensions.BigDecimalUtil;
-import com.toshi.util.CurrencyUtil;
-import com.toshi.util.LocaleUtil;
+import com.extensions.BigDecimalUtil;
+import com.util.CurrencyUtil;
+import com.util.LocaleUtil;
 
 import org.spongycastle.util.encoders.Hex;
 

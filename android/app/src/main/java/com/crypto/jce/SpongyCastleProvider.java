@@ -15,7 +15,7 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.jce;
+package com.crypto.jce;
 
 
 import org.spongycastle.jce.provider.BouncyCastleProvider;

@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'kotlin-android'
 
 import com.android.build.OutputFile
 
@@ -100,13 +101,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.tradewithluck"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         ndk {
@@ -140,12 +141,32 @@ android {
             }
         }
     }
+
+
+    configurations.all {
+        exclude module: 'httpclient' // from com.github.WhisperSystems:libsignal-service-java
+        exclude module: 'commons-logging' // from com.github.WhisperSystems:libsignal-service-java
+    }
 }
 
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
+    compile "com.android.support:appcompat-v7:26.1.0"
     compile "com.facebook.react:react-native:+"  // From node_modules
+
+    // Reactive
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+    // Crypto
+    compile 'org.bitcoinj:bitcoinj-core:0.14.3'
+    compile 'com.madgag.spongycastle:core:1.54.0.0'
+    compile 'com.madgag.spongycastle:prov:1.54.0.0'
+    compile 'com.github.WhisperSystems:libsignal-service-java:70a0b223b2'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true;
+    }
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 // Run this once to be able to run the application with BUCK
@@ -153,4 +174,7 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+repositories {
+    mavenCentral()
 }

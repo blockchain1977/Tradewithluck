@@ -15,7 +15,7 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.cryptohash;
+package com.crypto.cryptohash;
 
 /**
  * This class implements the core operations for the Keccak digest

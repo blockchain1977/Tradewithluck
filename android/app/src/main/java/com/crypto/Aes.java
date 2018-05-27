@@ -15,13 +15,13 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto;
+package com.crypto;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
 
-import com.toshi.view.BaseApplication;
+import com.view.BaseApplication;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;

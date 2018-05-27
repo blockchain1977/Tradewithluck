@@ -14,7 +14,7 @@
  *     You should have received a copy of the GNU General Public License
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.toshi.crypto.keyStore;
+package com.crypto.keyStore;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.security.keystore.KeyProperties;
 import android.support.annotation.NonNull;
 import android.util.Base64;
 
-import com.toshi.exception.KeyStoreException;
+import com.exception.KeyStoreException;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;

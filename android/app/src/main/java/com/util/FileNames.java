@@ -15,17 +15,11 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.crypto.hdshim;
+package com.util;
 
-
-import org.bitcoinj.core.NetworkParameters;
-import org.bitcoinj.wallet.DeterministicSeed;
-import org.bitcoinj.wallet.KeyChainGroup;
-
-public class EthereumKeyChainGroup extends KeyChainGroup {
-
-    public EthereumKeyChainGroup(final NetworkParameters params, final DeterministicSeed seed) {
-        super(params);
-        addAndActivateHDChain(new EthereumDeterministicKeyChain(seed));
-    }
+public class FileNames {
+    public static final String GCM_PREFS = "gcmp";
+    public static final String USER_PREFS = "usm";
+    public static final String BALANCE_PREFS = "bm";
+    public static final String WALLET_PREFS = "wa";
 }

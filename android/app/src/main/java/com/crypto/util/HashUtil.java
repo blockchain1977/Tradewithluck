@@ -15,10 +15,10 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.util;
+package com.crypto.util;
 
 
-import com.toshi.crypto.cryptohash.Keccak256;
+import com.crypto.cryptohash.Keccak256;
 
 import org.spongycastle.util.Arrays;
 import org.whispersystems.signalservice.internal.util.Base64;

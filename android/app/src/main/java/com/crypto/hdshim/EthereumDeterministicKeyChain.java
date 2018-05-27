@@ -15,7 +15,7 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.hdshim;
+package com.crypto.hdshim;
 
 
 import com.google.common.collect.ImmutableList;

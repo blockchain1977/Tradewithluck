@@ -15,10 +15,10 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.util;
+package com.crypto.util;
 
 
-import com.toshi.crypto.db.ByteArrayWrapper;
+import com.crypto.db.ByteArrayWrapper;
 
 import org.spongycastle.util.encoders.Hex;
 
@@ -31,10 +31,10 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
-import static com.toshi.crypto.util.ByteUtil.byteArrayToInt;
-import static com.toshi.crypto.util.ByteUtil.intToBytesNoLeadZeroes;
-import static com.toshi.crypto.util.ByteUtil.isNullOrZeroArray;
-import static com.toshi.crypto.util.ByteUtil.isSingleZero;
+import static com.crypto.util.ByteUtil.byteArrayToInt;
+import static com.crypto.util.ByteUtil.intToBytesNoLeadZeroes;
+import static com.crypto.util.ByteUtil.isNullOrZeroArray;
+import static com.crypto.util.ByteUtil.isSingleZero;
 import static java.util.Arrays.copyOfRange;
 import static org.spongycastle.util.Arrays.concatenate;
 import static org.spongycastle.util.BigIntegers.asUnsignedByteArray;

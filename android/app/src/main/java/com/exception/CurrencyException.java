@@ -15,31 +15,10 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.signal.model;
+package com.exception;
 
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-@JsonPropertyOrder(alphabetic=true)
-public class OutgoingSignedPreKeyState {
-    @JsonProperty
-    private SignalBootstrap payload;
-
-    @JsonProperty
-    private String address;
-
-    @JsonProperty
-    private String signature;
-
-
-    public OutgoingSignedPreKeyState(
-            final SignalBootstrap payload,
-            final String signature,
-            final String address) {
-        this.payload = payload;
-        this.signature = signature;
-        this.address = address;
+public class CurrencyException extends Exception {
+    public CurrencyException(Throwable cause) {
+        super(cause);
     }
-
 }

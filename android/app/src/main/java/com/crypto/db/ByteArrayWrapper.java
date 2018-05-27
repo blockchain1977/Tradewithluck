@@ -15,9 +15,9 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.db;
+package com.crypto.db;
 
-import com.toshi.crypto.util.FastByteComparisons;
+import com.crypto.util.FastByteComparisons;
 
 import org.spongycastle.util.encoders.Hex;
 

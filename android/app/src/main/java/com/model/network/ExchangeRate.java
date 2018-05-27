@@ -15,17 +15,33 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.crypto.hdshim;
+package com.model.network;
 
+import java.math.BigDecimal;
 
-import org.bitcoinj.core.NetworkParameters;
-import org.bitcoinj.wallet.DeterministicSeed;
-import org.bitcoinj.wallet.KeyChainGroup;
+public class ExchangeRate {
 
-public class EthereumKeyChainGroup extends KeyChainGroup {
+    private String from;
+    private String to;
+    private BigDecimal rate;
+    private Integer timestamp;
 
-    public EthereumKeyChainGroup(final NetworkParameters params, final DeterministicSeed seed) {
-        super(params);
-        addAndActivateHDChain(new EthereumDeterministicKeyChain(seed));
+    public ExchangeRate() {}
+
+    public String getFrom() {
+        return from;
     }
+
+    public String getTo() {
+        return to;
+    }
+
+    public BigDecimal getRate() {
+        return rate;
+    }
+
+    public Integer getTimestamp() {
+        return timestamp;
+    }
+
 }

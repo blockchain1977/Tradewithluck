@@ -15,10 +15,10 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.util;
+package com.crypto.util;
 
 
-import com.toshi.crypto.db.ByteArrayWrapper;
+import com.crypto.db.ByteArrayWrapper;
 
 import org.spongycastle.util.encoders.Hex;
 
@@ -45,7 +45,7 @@ public class ByteUtil {
     }
 
     /**
-     * The regular {@link java.math.BigInteger#toByteArray()} method isn't quite what we often need:
+     * The regular {@link BigInteger#toByteArray()} method isn't quite what we often need:
      * it appends a leading zero to indicate that the number is positive and may need padding.
      *
      * @param b the integer to format into a byte array

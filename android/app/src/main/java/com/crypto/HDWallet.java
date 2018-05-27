@@ -15,20 +15,20 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto;
+package com.crypto;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 
-import com.toshi.crypto.hdshim.EthereumKeyChainGroup;
-import com.toshi.crypto.keyStore.KeyStoreHandler;
-import com.toshi.crypto.util.TypeConverter;
-import com.toshi.exception.InvalidMasterSeedException;
-import com.toshi.exception.KeyStoreException;
-import com.toshi.util.FileNames;
-import com.toshi.util.LogUtil;
-import com.toshi.view.BaseApplication;
+import com.crypto.hdshim.EthereumKeyChainGroup;
+import com.crypto.keyStore.KeyStoreHandler;
+import com.crypto.util.TypeConverter;
+import com.exception.InvalidMasterSeedException;
+import com.exception.KeyStoreException;
+import com.util.FileNames;
+import com.util.LogUtil;
+import com.view.BaseApplication;
 
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.crypto.DeterministicKey;
@@ -42,7 +42,7 @@ import java.io.IOException;
 
 import rx.Single;
 
-import static com.toshi.crypto.util.HashUtil.sha3;
+import static com.crypto.util.HashUtil.sha3;
 
 public class HDWallet {
 

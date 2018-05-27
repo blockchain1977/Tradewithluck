@@ -15,19 +15,19 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto;
+package com.crypto;
 
 
 import android.support.annotation.Nullable;
 
-import com.toshi.crypto.jce.ECKeyAgreement;
-import com.toshi.crypto.jce.ECKeyFactory;
-import com.toshi.crypto.jce.ECKeyPairGenerator;
-import com.toshi.crypto.jce.ECSignatureFactory;
-import com.toshi.crypto.jce.SpongyCastleProvider;
-import com.toshi.crypto.util.ByteUtil;
-import com.toshi.crypto.util.HashUtil;
-import com.toshi.crypto.util.TypeConverter;
+import com.crypto.jce.ECKeyAgreement;
+import com.crypto.jce.ECKeyFactory;
+import com.crypto.jce.ECKeyPairGenerator;
+import com.crypto.jce.ECSignatureFactory;
+import com.crypto.jce.SpongyCastleProvider;
+import com.crypto.util.ByteUtil;
+import com.crypto.util.HashUtil;
+import com.crypto.util.TypeConverter;
 
 import org.spongycastle.asn1.ASN1InputStream;
 import org.spongycastle.asn1.ASN1Integer;
@@ -78,7 +78,7 @@ import java.util.Arrays;
 
 import javax.crypto.KeyAgreement;
 
-import static com.toshi.crypto.util.ByteUtil.bigIntegerToBytes;
+import static com.crypto.util.ByteUtil.bigIntegerToBytes;
 
 public class ECKey implements Serializable {
     /**
@@ -494,7 +494,7 @@ public class ECKey implements Serializable {
      *
      * @return  -
      *
-     * @throws java.lang.IllegalStateException if the private key bytes are not available.
+     * @throws IllegalStateException if the private key bytes are not available.
      */
     public BigInteger getPrivKey() {
         if (privKey == null) {

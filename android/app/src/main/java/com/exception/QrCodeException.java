@@ -15,24 +15,10 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.signal.store;
+package com.exception;
 
-
-import com.toshi.R;
-import com.toshi.view.BaseApplication;
-
-import org.whispersystems.signalservice.api.push.TrustStore;
-
-import java.io.InputStream;
-
-public class SignalTrustStore implements TrustStore {
-    @Override
-    public InputStream getKeyStoreInputStream() {
-        return BaseApplication.get().getResources().openRawResource(R.raw.chatkey);
-    }
-
-    @Override
-    public String getKeyStorePassword() {
-        return "whisper";
+public class QrCodeException extends Exception {
+    public QrCodeException(Throwable cause) {
+        super(cause);
     }
 }
