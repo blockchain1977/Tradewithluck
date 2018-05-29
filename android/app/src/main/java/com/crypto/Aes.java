@@ -21,7 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Base64;
 
-import com.view.BaseApplication;
+import com.tradewithluck.MainApplication;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
@@ -49,7 +49,7 @@ public class Aes
     private AlgorithmParameterSpec spec;
 
     public Aes() {
-        this.preferences = BaseApplication.get().getSharedPreferences("ae", Context.MODE_PRIVATE);
+        this.preferences = MainApplication.get().getSharedPreferences("ae", Context.MODE_PRIVATE);
     }
 
     public String encrypt(final String plainText, final String password) {

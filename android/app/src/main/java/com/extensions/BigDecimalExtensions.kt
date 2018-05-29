@@ -16,7 +16,7 @@
  */
 
 @file:JvmName("BigDecimalUtil")
-package com.toshi.extensions
+package com.extensions
 
 import com.util.CurrencyUtil
 import com.util.EthUtil

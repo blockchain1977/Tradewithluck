@@ -14,6 +14,8 @@ import java.util.List;
 import com.wallet.TestPackage;
 
 public class MainApplication extends Application implements ReactApplication {
+  private static MainApplication instance;
+  public static MainApplication get() { return instance; }
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
@@ -43,6 +45,7 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    instance = this;
     SoLoader.init(this, /* native exopackage */ false);
   }
 }

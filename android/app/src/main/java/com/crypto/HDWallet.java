@@ -28,7 +28,7 @@ import com.exception.InvalidMasterSeedException;
 import com.exception.KeyStoreException;
 import com.util.FileNames;
 import com.util.LogUtil;
-import com.view.BaseApplication;
+import com.tradewithluck.MainApplication;
 
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.crypto.DeterministicKey;
@@ -55,7 +55,7 @@ public class HDWallet {
     private String masterSeed;
 
     public HDWallet() {
-        this.prefs = BaseApplication.get().getSharedPreferences(FileNames.WALLET_PREFS, Context.MODE_PRIVATE);
+        this.prefs = MainApplication.get().getSharedPreferences(FileNames.WALLET_PREFS, Context.MODE_PRIVATE);
     }
 
     public HDWallet(@NonNull final SharedPreferences preferences) {
@@ -253,7 +253,7 @@ public class HDWallet {
 
     private void saveMasterSeedToStorage(final String masterSeed) {
         try {
-            final KeyStoreHandler keyStoreHandler = new KeyStoreHandler(BaseApplication.get(), ALIAS);
+            final KeyStoreHandler keyStoreHandler = new KeyStoreHandler(MainApplication.get(), ALIAS);
             final String encryptedMasterSeed = keyStoreHandler.encrypt(masterSeed);
             saveMasterSeed(encryptedMasterSeed);
             this.masterSeed = masterSeed;
@@ -270,7 +270,7 @@ public class HDWallet {
 
     private String readMasterSeedFromStorage() {
         try {
-            final KeyStoreHandler keyStoreHandler = new KeyStoreHandler(BaseApplication.get(), ALIAS);
+            final KeyStoreHandler keyStoreHandler = new KeyStoreHandler(MainApplication.get(), ALIAS);
             final String encryptedMasterSeed = this.prefs.getString(MASTER_SEED, null);
             if (encryptedMasterSeed == null) return null;
             return keyStoreHandler.decrypt(encryptedMasterSeed, this::saveMasterSeed);

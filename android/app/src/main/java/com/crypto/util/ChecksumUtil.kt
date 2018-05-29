@@ -15,9 +15,9 @@
  *     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.toshi.crypto.util
+package com.crypto.util
 
-import com.toshi.crypto.util.HashUtil.sha3
+import com.crypto.util.HashUtil.sha3
 
 fun usesChecksum(address: String?): Boolean {
     return address?.substring(2)?.let {
