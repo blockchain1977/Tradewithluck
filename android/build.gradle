@@ -9,11 +9,9 @@ buildscript {
         }
         jcenter()
         google()
-        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'
-        classpath 'io.fabric.tools:gradle:1.22.1'
         classpath 'io.realm:realm-gradle-plugin:5.0.1'
         classpath 'com.google.gms:google-services:3.2.0'
         classpath files('app/libs/gradle-witness.jar')
@@ -26,9 +24,13 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenLocal()
         jcenter()
         google()
         maven { url "https://jitpack.io" }
-        maven { url 'https://maven.fabric.io/public' }
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
     }
 }

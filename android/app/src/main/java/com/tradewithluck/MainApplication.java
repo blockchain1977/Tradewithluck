@@ -11,13 +11,17 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-import com.wallet.TestPackage;
+import com.toshi.crypto.HDWallet;
+import com.tradewithluck.wallet.RNPackage;
 
 public class MainApplication extends Application implements ReactApplication {
   private static MainApplication instance;
   public static MainApplication get() { return instance; }
 
+  private static HDWallet wallet;
+
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -27,7 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new TestPackage()
+          new RNPackage()
       );
     }
 
@@ -46,6 +50,24 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     instance = this;
+
+    HDWallet w = new HDWallet();
+    HDWallet lwallet = w.getExistingWallet().toBlocking().value();
+
+    if (lwallet == null) {
+      lwallet = w.createWallet()
+              .toBlocking().value();
+    }
+    this.setWallet(lwallet);
+
     SoLoader.init(this, /* native exopackage */ false);
+  }
+
+  private void setWallet(HDWallet wallet) {
+    this.wallet = wallet;
+  }
+
+  public static HDWallet getWallet() {
+    return wallet;
   }
 }

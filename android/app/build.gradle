@@ -78,7 +78,6 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
-apply plugin: 'io.fabric'
 
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
@@ -114,6 +113,7 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        multiDexEnabled true
 
     }
     splits {
@@ -143,7 +143,6 @@ android {
             }
         }
     }
-
 
     configurations.all {
         exclude module: 'httpclient' // from com.github.WhisperSystems:libsignal-service-java
@@ -175,12 +174,12 @@ dependencies {
     implementation 'org.bitcoinj:bitcoinj-core:0.14.3'
     implementation 'com.madgag.spongycastle:core:1.54.0.0'
     implementation 'com.madgag.spongycastle:prov:1.54.0.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
     implementation 'com.github.WhisperSystems:libsignal-service-java:70a0b223b2'
 
-    implementation('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
-        transitive = true
-    }
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'com.android.support:multidex:1.0.0'
 
 }
 
@@ -189,7 +188,4 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.implementation
     into 'libs'
-}
-repositories {
-    mavenCentral()
 }
