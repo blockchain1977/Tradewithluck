@@ -15,7 +15,11 @@ const routers = (
           <Scene key="autionlist" component={AuctionListContainer} Layout={AuctionList} />
         </Stack>
 
-        <Stack key="accountinfo" title="AccountInfo" icon={() => <Icon name="logo-bitcoin" />}>
+        <Stack
+          key="accountinfo"
+          title="AccountInfo"
+          icon={() => <Icon name="md-information-circle" />}
+        >
           <Scene key="accountinfo" component={AccountInfo} />
         </Stack>
       </Tabs>

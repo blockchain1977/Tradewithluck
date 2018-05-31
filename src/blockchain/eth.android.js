@@ -13,19 +13,25 @@ const styles = StyleSheet.create({
 export default class Bla extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {address: ""};
+    this.state = {address: "",
+                  seed:""};
   }
 
   componentDidMount() {
     NativeModules.RNWallet.getAddress(str => {
       this.setState({address: str});
     });
+    NativeModules.RNWallet.getMasterSeed(str => {
+      this.setState({ seed: str });
+    });
+    
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text>{ this.state.address }</Text>
+        <Text>{ this.state.seed }</Text>
         <Button 
           title="button" 
           onPress={() => {

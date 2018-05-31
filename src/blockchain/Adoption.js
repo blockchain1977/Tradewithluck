@@ -1,10 +1,18 @@
+import { NativeModules } from 'react-native';
+
 import '../../global';
 
-const account = '0xe65e645d0ce0c15992907e9995945d6dd454aa09';
+
+// '0xe65e645d0ce0c15992907e9995945d6dd454aa09';
 const contractAddress = '0x269af36b29ecaa1c18e6e37859e72a37cefae7ad';
 
 class Adoption {
+  account = '';
+
   constructor() {
+    NativeModules.RNWallet.getAddress(str => {
+      this.account = str;
+    });
     // const contract = require('truffle-contract');
     this.contract = new global.web3.eth.Contract(
       [
@@ -29,7 +37,7 @@ class Adoption {
       ],
       contractAddress,
       {
-        from: account, // default from address
+        from: this.account, // default from address
         gasPrice: '20000000000' // default gas price in wei, 20 gwei in this case
       }
     );
@@ -62,7 +70,7 @@ class Adoption {
     return Promise.resolve(
       this.contract.methods
         .adopt(petId)
-        .send({ from: account })
+        .send({ from: this.account })
         .then(() => petId)
     );
   }

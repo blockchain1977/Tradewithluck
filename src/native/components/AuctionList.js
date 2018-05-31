@@ -72,15 +72,12 @@ const AuctionList = ({ auctions, fabstatus, toggleFAB, adoptPet }) => (
         position="bottomRight"
         onPress={() => toggleFAB()}
       >
-        <Icon name="share" />
-        <Button style={{ backgroundColor: '#34A34F' }}>
-          <Icon name="logo-whatsapp" />
-        </Button>
+        <Icon name="logo-bitcoin" />
         <Button style={{ backgroundColor: '#3B5998' }}>
-          <Icon name="logo-facebook" />
+          <Icon name="md-qr-scanner" />
         </Button>
-        <Button disabled style={{ backgroundColor: '#DD5144' }}>
-          <Icon name="mail" />
+        <Button style={{ backgroundColor: '#34A34F' }}>
+          <Icon name="md-card" />
         </Button>
       </Fab>
     </View>

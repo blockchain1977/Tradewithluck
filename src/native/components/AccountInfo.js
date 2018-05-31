@@ -5,8 +5,7 @@ import Bla from '../../blockchain/eth.android'
 const AccountInfo = () => (
   <Container>
     <Content padder>
-      <Text>Username </Text>
-      <Text>CurrentInAuction </Text>
+      <Text>Username: Peng Yu </Text>
       <Text>Address </Text>
       <Bla />
     </Content>

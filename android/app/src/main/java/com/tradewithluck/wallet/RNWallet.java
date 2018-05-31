@@ -33,4 +33,22 @@ public class RNWallet extends ReactContextBaseJavaModule {
         }
         cb.invoke(address);
     }
+
+    @ReactMethod
+    public void getMasterSeed(Callback cb) {
+        String seed = "Seed Not ready";
+        if (MainApplication.getWallet() != null) {
+            seed = MainApplication.getWallet().getMasterSeed();
+        }
+        cb.invoke(seed);
+    }
+
+    @ReactMethod
+    public void signTransaction(final String data, Callback cb) {
+        String result = "";
+        if (MainApplication.getWallet() != null) {
+            result = MainApplication.getWallet().signTransaction(data);
+        }
+        cb.invoke(result);
+    }
 }
