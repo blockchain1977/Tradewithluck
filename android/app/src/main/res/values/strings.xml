@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Trade With Luck</string>
+    <string name="eth_currency_code">ETH</string>
+    <string name="eth_amount">%1$s ETH</string>
+    <string name="eth_balance">%1$s ETH</string>
+    <string name="init_manager_error">Something went wrong. Please try again</string>
 </resources>

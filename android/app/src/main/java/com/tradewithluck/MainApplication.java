@@ -1,6 +1,10 @@
 package com.tradewithluck;
 
-import android.app.Application;
+import android.arch.lifecycle.Lifecycle;
+import android.arch.lifecycle.OnLifecycleEvent;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -11,14 +15,17 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
-import com.toshi.crypto.HDWallet;
+import com.toshi.manager.BalanceManager;
+import com.toshi.manager.ToshiManager;
+import com.toshi.manager.TransactionManager;
 import com.tradewithluck.wallet.RNPackage;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
   private static MainApplication instance;
   public static MainApplication get() { return instance; }
+  private boolean inBackground = false;
 
-  private static HDWallet wallet;
+  private ToshiManager toshiManager;
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
@@ -42,6 +49,12 @@ public class MainApplication extends Application implements ReactApplication {
   };
 
   @Override
+  protected void attachBaseContext(Context newBase) {
+    super.attachBaseContext(newBase);
+    MultiDex.install(this);
+  }
+
+  @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
   }
@@ -50,24 +63,42 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     instance = this;
-
-    HDWallet w = new HDWallet();
-    HDWallet lwallet = w.getExistingWallet().toBlocking().value();
-
-    if (lwallet == null) {
-      lwallet = w.createWallet()
-              .toBlocking().value();
-    }
-    this.setWallet(lwallet);
+    init();
 
     SoLoader.init(this, /* native exopackage */ false);
   }
 
-  private void setWallet(HDWallet wallet) {
-    this.wallet = wallet;
-  }
+    private void init() {
+        initToshiManager();
+    }
 
-  public static HDWallet getWallet() {
-    return wallet;
-  }
+    private void initToshiManager() {
+        this.toshiManager = new ToshiManager();
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    public void onResumed() {
+        if (!this.inBackground) return;
+        this.inBackground = false;
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    public void onStop() {
+        this.inBackground = true;
+    }
+
+    public boolean isInBackground() { return this.inBackground; }
+
+
+    public final ToshiManager getToshiManager() {
+        return this.toshiManager;
+    }
+
+    public final TransactionManager getTransactionManager() {
+        return this.toshiManager.getTransactionManager();
+    }
+
+    public final BalanceManager getBalanceManager() {
+        return this.toshiManager.getBalanceManager();
+    }
 }

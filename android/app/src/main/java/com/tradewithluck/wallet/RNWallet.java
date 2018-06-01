@@ -19,8 +19,8 @@ public class RNWallet extends ReactContextBaseJavaModule {
     @ReactMethod
     public void test(String message, Callback cb) {
         String address = "Address Not ready";
-        if (MainApplication.getWallet() != null) {
-            address = MainApplication.getWallet().getOwnerAddress();
+        if (MainApplication.get().getTransactionManager().getWallet() != null) {
+            address = MainApplication.get().getTransactionManager().getWallet().getOwnerAddress();
         }
         cb.invoke("Address: " + address);
     }
@@ -28,8 +28,8 @@ public class RNWallet extends ReactContextBaseJavaModule {
     @ReactMethod
     public void getAddress(Callback cb) {
         String address = "Address Not ready";
-        if (MainApplication.getWallet() != null) {
-            address = MainApplication.getWallet().getOwnerAddress();
+        if (MainApplication.get().getTransactionManager().getWallet() != null) {
+            address = MainApplication.get().getTransactionManager().getWallet().getOwnerAddress();
         }
         cb.invoke(address);
     }
@@ -37,17 +37,18 @@ public class RNWallet extends ReactContextBaseJavaModule {
     @ReactMethod
     public void getMasterSeed(Callback cb) {
         String seed = "Seed Not ready";
-        if (MainApplication.getWallet() != null) {
-            seed = MainApplication.getWallet().getMasterSeed();
+        if (MainApplication.get().getTransactionManager().getWallet() != null) {
+            seed = MainApplication.get().getTransactionManager().getWallet().getMasterSeed();
         }
         cb.invoke(seed);
     }
 
     @ReactMethod
     public void signTransaction(final String data, Callback cb) {
+        //TODO: To update
         String result = "";
-        if (MainApplication.getWallet() != null) {
-            result = MainApplication.getWallet().signTransaction(data);
+        if (MainApplication.get().getTransactionManager().getWallet() != null) {
+            result = MainApplication.get().getTransactionManager().getWallet().signTransaction(data);
         }
         cb.invoke(result);
     }
