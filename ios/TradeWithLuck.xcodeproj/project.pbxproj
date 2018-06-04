@@ -47,6 +47,10 @@
 		D720575511DB4105B6BA12A4 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B68C6BD27EEC477A8285EABB /* Roboto.ttf */; };
 		22F7EB53A44541E9B2557F1F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E684EB489B7F4C1BBD52773C /* SimpleLineIcons.ttf */; };
 		D3E47624A74E4AD7B8DCF81B /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80B0CB897DC0434CA98F3C33 /* Zocial.ttf */; };
+		39816D6A398740D6B2B1D8D7 /* ReactNativeGeth.app in Resources */ = {isa = PBXBuildFile; fileRef = C752A1820545427297AEF4B8 /* ReactNativeGeth.app */; };
+		4E416D4E91124CB2BA202826 /* ReactNativeGethTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = E2038C82113048C197326529 /* ReactNativeGethTests.xctest */; };
+		67342035C9764E6083401029 /* ReactNativeGeth-tvOS.app in Resources */ = {isa = PBXBuildFile; fileRef = 71892B14A5D64F59A3445C8A /* ReactNativeGeth-tvOS.app */; };
+		3EAAB1B7BE0249CE87D260B8 /* ReactNativeGeth-tvOSTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = A5D9FB8ED27D45E9B4873631 /* ReactNativeGeth-tvOSTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +311,11 @@
 		B68C6BD27EEC477A8285EABB /* Roboto.ttf */ = {isa = PBXFileReference; name = "Roboto.ttf"; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E684EB489B7F4C1BBD52773C /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		80B0CB897DC0434CA98F3C33 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8A4F407567A74ECE89D0EC36 /* ReactNativeGeth.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeGeth.xcodeproj"; path = "../node_modules/react-native-geth/ios/ReactNativeGeth.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C752A1820545427297AEF4B8 /* ReactNativeGeth.app */ = {isa = PBXFileReference; name = "ReactNativeGeth.app"; path = "ReactNativeGeth.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
+		E2038C82113048C197326529 /* ReactNativeGethTests.xctest */ = {isa = PBXFileReference; name = "ReactNativeGethTests.xctest"; path = "ReactNativeGethTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		71892B14A5D64F59A3445C8A /* ReactNativeGeth-tvOS.app */ = {isa = PBXFileReference; name = "ReactNativeGeth-tvOS.app"; path = "ReactNativeGeth-tvOS.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
+		A5D9FB8ED27D45E9B4873631 /* ReactNativeGeth-tvOSTests.xctest */ = {isa = PBXFileReference; name = "ReactNativeGeth-tvOSTests.xctest"; path = "ReactNativeGeth-tvOSTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +344,8 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				39816D6A398740D6B2B1D8D7 /* ReactNativeGeth.app in Resources */,
+				4E416D4E91124CB2BA202826 /* ReactNativeGethTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +361,8 @@
 				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
 				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				67342035C9764E6083401029 /* ReactNativeGeth-tvOS.app in Resources */,
+				3EAAB1B7BE0249CE87D260B8 /* ReactNativeGeth-tvOSTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +525,7 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				8A4F407567A74ECE89D0EC36 /* ReactNativeGeth.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1111,6 +1125,17 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeWithLuck.app/TradeWithLuck";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Debug;
 		};
@@ -1128,6 +1153,17 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeWithLuck.app/TradeWithLuck";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Release;
 		};
@@ -1146,6 +1182,10 @@
 				);
 				PRODUCT_NAME = TradeWithLuck;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Debug;
 		};
@@ -1163,6 +1203,10 @@
 				);
 				PRODUCT_NAME = TradeWithLuck;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Release;
 		};
@@ -1189,6 +1233,17 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Debug;
 		};
@@ -1215,6 +1270,17 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)\..\node_modules\react-native-geth\ios\ReactNativeGeth",
+				);
 			};
 			name = Release;
 		};
@@ -1236,6 +1302,13 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeWithLuck-tvOS.app/TradeWithLuck-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1257,6 +1330,13 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TradeWithLuck-tvOS.app/TradeWithLuck-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 			};
 			name = Release;
 		};

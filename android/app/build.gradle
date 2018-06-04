@@ -157,6 +157,7 @@ android {
 def supportLibVersion = '27.1.0'
 
 dependencies {
+    compile project(':react-native-geth')
     implementation(
             // Support
             "com.android.support:appcompat-v7:${supportLibVersion}",
